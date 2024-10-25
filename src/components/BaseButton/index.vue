@@ -2,10 +2,14 @@
 defineProps<{
   label?: string
 }>()
+
+function handleClick() {
+  console.log("click");
+}
 </script>
 
 <template>
-  <button class="base base-button">
+  <button class="base base-button" @click="handleClick">
     <slot>{{ label }}</slot>
   </button>
 </template>

@@ -1,16 +1,25 @@
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
+import { defineConfig } from 'vite';
+import vue from '@vitejs/plugin-vue';
+import copy from 'rollup-plugin-copy';
 
-// https://vite.dev/config/
 export default defineConfig({
-  plugins: [vue()],
+  plugins: [
+    vue(),
+    copy({
+      targets: [
+        { src: 'src/index.d.ts', dest: 'dist/types' },
+      ],
+      hook: 'writeBundle'
+    })
+  ],
   build: {
     lib: {
-      entry: './src/index.ts',
+      entry: 'src/index.ts',
       name: 'VBaseComponents',
       fileName: (format) => `v-base-components.${format}.js`,
     },
     rollupOptions: {
+      // Externalize dependencies that shouldn't be bundled
       external: ['vue'],
       output: {
         globals: {
@@ -19,4 +28,4 @@ export default defineConfig({
       },
     },
   },
-})
+});

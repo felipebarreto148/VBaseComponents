@@ -1,5 +1,4 @@
-import BaseButton from "./components/BaseButton/index.vue";
+import "./index.css";
+import * as components from "./components/index"
 
-export {
-  BaseButton
-}
+export default components;
