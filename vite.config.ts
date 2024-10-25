@@ -1,5 +1,7 @@
+// vite.config.js
+import { resolve } from 'path'
 import { defineConfig } from 'vite';
-import vue from '@vitejs/plugin-vue';
+import vue from '@vitejs/plugin-vue'
 import copy from 'rollup-plugin-copy';
 
 export default defineConfig({
@@ -14,12 +16,12 @@ export default defineConfig({
   ],
   build: {
     lib: {
-      entry: 'src/index.ts',
+      entry: resolve(__dirname, 'src/index.ts'),
       name: 'VBaseComponents',
-      fileName: (format) => `v-base-components.${format}.js`,
+      formats: ['es', 'umd'],
+      fileName: 'v-base-components',
     },
     rollupOptions: {
-      // Externalize dependencies that shouldn't be bundled
       external: ['vue'],
       output: {
         globals: {
@@ -28,4 +30,4 @@ export default defineConfig({
       },
     },
   },
-});
+})
