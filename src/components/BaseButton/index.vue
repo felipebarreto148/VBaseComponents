@@ -2,14 +2,10 @@
 defineProps<{
   label?: string
 }>()
-
-function handleClick() {
-  console.log("click");
-}
 </script>
 
 <template>
-  <button class="base base-button" @click="handleClick">
+  <button class="base base-button">
     <slot>{{ label }}</slot>
   </button>
 </template>
@@ -21,6 +17,7 @@ function handleClick() {
   border: none;
   width: fit-content;
   padding: 6px 8px;
+  border-radius: 6px;
   color: white;
   transition: all ease-in-out 200ms;
 
