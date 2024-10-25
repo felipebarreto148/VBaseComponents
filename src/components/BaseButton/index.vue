@@ -12,7 +12,7 @@ defineProps<{
 
 <style scoped>
 .base-button {
-  background-color: black;
+  background-color: var(--base-color-primary);
   outline: none;
   border: none;
   width: fit-content;
