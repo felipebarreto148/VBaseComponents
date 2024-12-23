@@ -21,8 +21,8 @@
   /* Espaçamentos */
   --base-spacing-xs: 4px;
   --base-spacing-sm: 8px;
-  --base-spacing-md: 16px;
-  --base-spacing-lg: 24px;
+  --base-spacing-md: 12px;
+  --base-spacing-lg: 16px;
 
   /* Breakpoints */
   --base-xs: 320px; /* 320px ~ 480px */
